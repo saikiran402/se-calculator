@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<body>
+
+
+    <div class="calculator">
+
+        <div id="display">0</div>
+        <button onclick="clearAll()" style="background-color: red; color:white">AC</button>
+        <button onclick="clearEntry()">C</button>
+        <button onclick="operate('+')">+</button>
+        <button onclick="operate('-')">-</button>
+        <button onclick="input('1')">1</button>
+        <button onclick="input('2')">2</button>
+        <button onclick="input('3')">3</button>
+        <button onclick="operate('*')">*</button>
+        <button onclick="input('4')">4</button>
+        <button onclick="input('5')">5</button>
+        <button onclick="input('6')">6</button>
+        <button onclick="operate('/')">/</button>
+        <button onclick="input('7')">7</button>
+        <button onclick="input('8')">8</button>
+        <button onclick="input('9')">9</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="input('0')">0</button>
+
+
+        <!-- ... existing buttons ... -->
+
+<!-- Scientific operation buttons -->
+<button class="operation" onclick="scientificOperate('sqrt')">√</button>
+<button class="operation" onclick="scientificOperate('log')">log</button>
+<button class="operation" onclick="scientificOperate('exp')">exp</button>
+
+<!-- ... rest of your calculator buttons ... -->
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<script src="script.js"></script>
