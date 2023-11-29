@@ -61,14 +61,45 @@ function updateDisplay(value) {
     document.getElementById('display').innerText = value;
 }
 
-function clearAll() {
-
-}
 function clearEntry() {
- 
+    currentInput = currentInput.slice(0, -1); // Remove the last character
+    if (currentInput === "") {
+        updateDisplay("0");
+    } else {
+        updateDisplay(currentInput);
+    }
 }
-function scientificOperate(op) {
 
+function scientificOperate(op) {
+    if (currentInput !== "") {
+        const current = parseFloat(currentInput);
+
+        if (isNaN(current)) return;
+
+        let result;
+        switch (op) {
+            case 'sqrt':
+                result = Math.sqrt(current);
+                break;
+            case 'log':
+                result = Math.log10(current);
+                break;
+            case 'exp':
+                result = Math.exp(current);
+                break;
+            default:
+                return;
+        }
+        updateDisplay(String(result).substring(0, 8));
+        currentInput = String(result);
+    }
+}
+
+function clearAll() {
+    currentInput = "";
+    previousInput = "";
+    operation = null;
+    updateDisplay("0");
 }
 
 
